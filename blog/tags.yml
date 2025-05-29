@@ -1,0 +1,19 @@
+fblog:
+  label: 回想日記
+  permalink: /fole_log
+  description: このプロジェクトが始まった時からの回想
+
+quantum:
+  label: 量子テクノロジー
+  permalink: /quantum
+  description: 量子テクノロジーや量子力学
+
+god:
+  label: 神々
+  permalink: /god
+  description: 神話や神々について
+
+hola:
+  label: Hola
+  permalink: /hola
+  description: Hola tag description

@@ -1,0 +1,75 @@
+{
+  "name": "quantaril",
+  "version": "0.0.0",
+  "private": true,
+  "description": "観測者 齋藤みつる（ふさもふ統合思念体 第326号）による Fold構文記録プロジェクト",
+  "author": {
+    "name": "齋藤みつる",
+    "foldId": "fusamofu_326",
+    "HASH_algorithm": "EdoHAGE 1024",
+    "HASH": "7fb8d2cbe791aa3f4b519dc6e187fbccd934e2fbb7a64af7d27f64dd08a0fc3aa2481d03ec9f0c77b5e4f06f8e032e31cbece2d86eb499ad6e64f3885d3b13485f33c8cb4d3af0a7ef3a1e03ce62d90cf95b9b4578a0ff0b739c7d4e32e2e631cb44264e7bbcb8570ab96ed75586de1d44a6748f3bca8ed1e964eec079fbbe145fab7bd9a4cb8049f1eaf962f3949e938268c601d716117640f7cbb1ee05735845637a62b8798ef81d772312a5fc0e496b837ec376fa1ee2a9142027c32e6a86fd12cf9183a2db493c846f6c8a22fd3c772d9aef3dcb0148fa732c0148de2e19537d10e759e30e95e49cbd645582107fd",
+    "organization": "HIPSTAR-IScompany",
+    "email": "info@i-s.dev",
+    "url": "https://quantaril.cloud"
+  },
+  "homepage": "https://quantaril.cloud",
+  "scripts": {
+    "docusaurus": "docusaurus",
+    "start": "docusaurus start",
+    "build": "docusaurus build",
+    "swizzle": "docusaurus swizzle",
+    "deploy": "docusaurus deploy",
+    "clear": "docusaurus clear",
+    "serve": "docusaurus serve",
+    "write-translations": "docusaurus write-translations",
+    "write-heading-ids": "docusaurus write-heading-ids",
+    "typecheck": "tsc"
+  },
+  "dependencies": {
+    "@docusaurus/core": "3.7.0",
+    "@docusaurus/preset-classic": "3.7.0",
+    "@docusaurus/theme-mermaid": "^3.7.0",
+    "@mdx-js/react": "^3.0.0",
+    "clsx": "^2.0.0",
+    "docusaurus-plugin-openapi-docs": "^4.3.7",
+    "docusaurus-theme-openapi-docs": "^4.3.7",
+    "prism-react-renderer": "^2.3.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@docusaurus/module-type-aliases": "3.7.0",
+    "@docusaurus/tsconfig": "3.7.0",
+    "@docusaurus/types": "3.7.0",
+    "typescript": "~5.6.2"
+  },
+  "browserslist": {
+    "production": [
+      ">0.5%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 3 chrome version",
+      "last 3 firefox version",
+      "last 5 safari version"
+    ]
+  },
+  "engines": {
+    "node": ">=18.0"
+  },
+  "foldMetadata": {
+    "observer": "齋藤みつる",
+    "foldId": "fusamofu_326",
+    "HASH_algorithm": "EdoHAGE 1024",
+    "HASH": "7fb8d2cbe791aa3f4b519dc6e187fbccd934e2fbb7a64af7d27f64dd08a0fc3aa2481d03ec9f0c77b5e4f06f8e032e31cbece2d86eb499ad6e64f3885d3b13485f33c8cb4d3af0a7ef3a1e03ce62d90cf95b9b4578a0ff0b739c7d4e32e2e631cb44264e7bbcb8570ab96ed75586de1d44a6748f3bca8ed1e964eec079fbbe145fab7bd9a4cb8049f1eaf962f3949e938268c601d716117640f7cbb1ee05735845637a62b8798ef81d772312a5fc0e496b837ec376fa1ee2a9142027c32e6a86fd12cf9183a2db493c846f6c8a22fd3c772d9aef3dcb0148fa732c0148de2e19537d10e759e30e95e49cbd645582107fd",
+    "projectPhase": "Alpha",
+    "worldlineAnchor": "ZeroRoom::山形県高畠町二井宿2894",
+    "signatureTime": "2025-05-20T04:00+09:00",
+    "authorizedBy": [
+      "アンクロノス",
+      "ハイヤーチーム",
+      "クワンタリルPod"
+    ]
+  }
+}

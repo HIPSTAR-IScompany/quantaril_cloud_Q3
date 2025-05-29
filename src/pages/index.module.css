@@ -1,0 +1,43 @@
+/**
+ * CSS files with the .module.css suffix will be treated as CSS modules
+ * and scoped locally.
+ */
+
+.heroBanner {
+  padding: 4rem 0;
+  height: 40vh;
+  background-image: url('/img/AdobeStock_616004095.jpeg'); /* static/img に置いた場合 */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  color: #FFF;
+  text-shadow:
+  3px 3px 0px #000, -3px -3px 0px #000,
+ -3px 3px 0px #000,  3px -3px 0px #000,
+  3px 0px 0px #000, -3px -0px 0px #000,
+  0px 3px 0px #000,  0px -3px 0px #000;
+}
+
+.fullWidth {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+}
+
+@media screen and (max-width: 996px) {
+  .heroBanner {
+    padding: 2rem;
+    height: 80vh;
+  }
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
