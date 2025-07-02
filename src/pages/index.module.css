@@ -6,7 +6,7 @@
 .heroBanner {
   padding: 4rem 0;
   height: 40vh;
-  background-image: url('/img/AdobeStock_616004095.jpeg'); /* static/img に置いた場合 */
+  background-image: url('/img/top345.png'); /* static/img に置いた場合 */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

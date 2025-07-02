@@ -1,8 +1,8 @@
 {
-  "label": "開発中",
+  "label": "関連レポート論文系",
   "position": 3,
   "link": {
     "type": "generated-index",
-    "description": "5 minutes to learn the most important Docusaurus concepts."
+    "description": "オープンサイエンスでみんなで追試しよう！"
   }
 }
