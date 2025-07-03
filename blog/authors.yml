@@ -30,3 +30,9 @@ anno:
     line: https://lin.ee/nn4auia
     x: cronoanomoffice
 
+codex:
+  name: Codex
+  title: Logos解析AI
+  url: https://github.com/openai
+  image_url: https://github.com/openai.png
+  page: true
