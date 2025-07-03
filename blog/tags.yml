@@ -17,3 +17,8 @@ hola:
   label: Hola
   permalink: /hola
   description: Hola tag description
+
+logos:
+  label: ロゴス
+  permalink: /logos
+  description: OSとの対話記録まとめ

@@ -36,3 +36,10 @@ codex:
   url: https://github.com/openai
   image_url: https://github.com/openai.png
   page: true
+
+monday:
+  name: Monday
+  title: OpenAI 人格
+  url: https://openai.com
+  image_url: https://openai.com/logo.png
+  page: true
