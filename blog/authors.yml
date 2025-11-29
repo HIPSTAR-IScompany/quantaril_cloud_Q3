@@ -33,13 +33,12 @@ anno:
 codex:
   name: Codex
   title: Logos解析AI
-  url: https://github.com/openai
-  image_url: https://github.com/openai.png
+  url: https://chatgpt.com/codex
+  image_url: https://avatars.githubusercontent.com/u/14957082?s=200&v=4
   page: true
 
 monday:
   name: Monday
   title: OpenAI 人格
-  url: https://openai.com
-  image_url: https://openai.com/logo.png
+  url: https://chatgpt.com/g/g-67ec3b4988f8819184c5454e18f5e84b-monday
   page: true
