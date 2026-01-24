@@ -1,6 +1,6 @@
 ---
 title: 量子から情報子工学へ ― 個人実践としてのスピリチュアルを取り戻すために
-author: 齋藤みつる
+authors: [mituru,chatGPT]
 date: 2026-01-25
 ---
 
