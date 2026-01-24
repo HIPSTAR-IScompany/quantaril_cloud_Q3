@@ -7,7 +7,7 @@ const isDev = process.env.NODE_ENV === 'development';
 const config: Config = {
 
   title: 'quantaril.cloud',
-  tagline: '量子技術を使った次世代クラウド 意識と量子とマルチバースリアリティ体験',
+  tagline: '情報子工学を使った次世代クラウド 意識と情報とマルチバースリアリティ体験',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
