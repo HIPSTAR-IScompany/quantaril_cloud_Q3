@@ -139,3 +139,18 @@ Userは、初期文面が「第三者が製造責任範囲の用法を強行す�
 - 配送先を`UNKNOWN / USER GATE`からoperator指定の公開受取先へ更新した
 - 情報種別だけで一律に秘匿せず、第一者の公開指定と第三者の公開同意を分離した
 - Funding／give router／attribution／data-and-privacyに残っていた「配送先未実装」「住所非公開」の一律表現を同期した
+
+## 2026-08-17 餌付けchannelとSFW／NSFW棚のUser指定
+
+### [USER-DECLARED FACT]
+
+- 餌付けには物理送付とAmazonほしい物リスト等のchannelがある
+- ほしい物リスト等はSFW棚とNSFW棚に分かれている
+- 今後、API連携と棚UIを整備する
+
+### [FIX]
+
+- 餌付けを`physical / wishlist / future-api`のchannelと、`sfw / nsfw`の棚へ分離した
+- NSFWを劣位化せず、SFWとの無警告mergeも行わない表示契約を追加した
+- URL、credential、account ID、非公開list、注文者情報を推測・公開しない`USER GATE`を残した
+- APIが利用できない場合もoperator確認済みURLによるstatic棚で運用できるfallbackを定義した

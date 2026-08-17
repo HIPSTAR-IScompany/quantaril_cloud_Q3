@@ -14,3 +14,5 @@ Q Atlantis／ZeroRoomLab／ふさもふのactivity graphは、技術、OSS、地
 - NSFWをSFWより低い活動階級へ置かない
 
 content adjacencyと個別配置、広告表示、利用licenseは別契約です。
+
+[餌付けroute](../give/feeding)でも、物理送付・wishlist・APIというchannelと、SFW／NSFWという閲覧棚を分離します。NSFW棚を不可視化または劣位化せず、SFW棚へ無警告で混載もしません。
