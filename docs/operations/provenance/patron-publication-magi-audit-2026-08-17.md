@@ -122,3 +122,20 @@ Userは、初期文面が「第三者が製造責任範囲の用法を強行す�
 `TEXT-REVIEW -> PAYMENT-INTEGRATION -> HUMAN-CHECK`
 
 本修正ではcredential、price ID、webhook secret、live modeを操作しない。決済接続はテキストのHuman review完了後に行う。
+
+## 2026-08-17 公開受取先と情報主体のUser指定
+
+### [USER-DECLARED FACT]
+
+- `〒992-0301 山形県東置賜郡高畠町二井宿2894`は、Userが既にX／Gitで公開している受取先である
+- 宛名は`ZeroRoomLab`、`HIPSTAR`、`ふさもふ`のいずれかで到着する
+- `/patron/give/physical`へ公開配送先として掲載してよい
+- 齋藤みつる本人／HIPSTARが自ら公開指定した実在情報は隠す対象ではない
+- privacy firewallの目的は、支援者・送り主等の第三者情報を本人同意なく公開しないことである
+- Userは、神社の名称・所在地を秘密にすれば実在性への疑いを招く一方、賽銭を入れた人の個人情報を一律公開する運用も不当であり、奉納所の実在情報と奉納者のprivacyを分けるべきだと説明した
+
+### [FIX]
+
+- 配送先を`UNKNOWN / USER GATE`からoperator指定の公開受取先へ更新した
+- 情報種別だけで一律に秘匿せず、第一者の公開指定と第三者の公開同意を分離した
+- Funding／give router／attribution／data-and-privacyに残っていた「配送先未実装」「住所非公開」の一律表現を同期した

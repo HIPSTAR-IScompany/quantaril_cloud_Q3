@@ -17,4 +17,6 @@ canonical public values:
 
 `Anonymous != Unknown`です。誰か分からない記録を、本人が匿名を選んだ記録へ変換しません。
 
-公開attributionは会計、契約、本人確認、法的identityと別です。芳名を載せてもprivate donor identity、口座、invoice、住所、transaction IDを公開しません。
+公開attributionは会計、契約、本人確認、法的identityと別です。支援者・送り主等の第三者について、本人の同意なくprivate identity、口座、invoice、非公開住所、transaction IDを公開しません。
+
+齋藤みつる本人／HIPSTARが自ら公開指定した実在名称、事業・活動情報、[公開受取先](../give/physical)は、隠す対象へ自動分類しません。privacy firewallは第一者の実在情報を消すためではなく、預かった第三者情報を勝手にばらまかないために使います。

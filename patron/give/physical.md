@@ -16,5 +16,16 @@ description: Q Atlantis活動圏へ現物や現場資源を置く場合の対象
 過去ソーシャルには、冷蔵庫代相当、Apple Pencilとキーボード、トラック、食料等への公開謝意が残っています。
 これは実在候補を探す入口ですが、投稿だけから金額、所有権、対象scope、現在の関係を補完しません。
 
-自宅住所、private shipping address、invoice、非公開DMはpublic repositoryへ置きません。
-公開できる受取場所がoperatorから明示されるまで、配送先は`UNKNOWN / USER GATE`です。
+## 公開受取先
+
+operatorが公開受取先として指定している住所です。次のいずれかを宛名にすれば届きます。
+
+```text
+宛名: ZeroRoomLab / HIPSTAR / ふさもふ のいずれか
+〒992-0301
+山形県東置賜郡高畠町二井宿2894
+```
+
+この住所は、ZeroRoomLab／HIPSTAR／ふさもふ活動圏への現物奉納に使用できる公開配送先です。齋藤みつる本人とHIPSTARが自ら公開指定した実在情報は、privacyを理由に隠す対象ではありません。
+
+一方、送り主・支援者等の第三者については、本人の同意なく住所、private identity、invoice、非公開DM等を公開台帳へ転記しません。第一者が自ら公開した情報と、支援者から預かった情報を同じprivacy ruleへ畳みません。
