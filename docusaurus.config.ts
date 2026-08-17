@@ -128,6 +128,15 @@ const config: Config = {
         sidebarPath: require.resolve('./sidebars.glossary.ts'),
       },
     ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'patron',
+        path: 'patron',
+        routeBasePath: 'patron',
+        sidebarPath: require.resolve('./sidebars.patron.ts'),
+      },
+    ],
   ],
 
   themeConfig: {
@@ -186,6 +195,13 @@ const config: Config = {
           position: 'left',
           label: '用語集',
         },
+        {
+          type: 'docSidebar',
+          sidebarId: 'patronSidebar',
+          docsPluginId: 'patron',
+          position: 'right',
+          label: 'Patron / 奉納所',
+        },
         { to: '/blog', label: 'Blog', position: 'left' },
         {
           href: 'https://github.com/saitoomituru/ZeroRoomLab-manifest',
@@ -216,6 +232,10 @@ const config: Config = {
         {
           title: 'Community',
           items: [
+            {
+              label: 'Patron / 奉納所',
+              to: '/patron/',
+            },
             {
               label: 'X',
               href: 'https://x.com/K_chachamaru',

@@ -1,0 +1,16 @@
+---
+title: Supply Level
+description: Q Atlantis活動圏のresource状態を、観測時刻とUNKNOWNを保持して表示するHUD。
+---
+
+import SupplyHud from '@site/src/components/patron/SupplyHud';
+
+# Supply Level / 研究炉の資源状態
+
+これは精密会計dashboardでも、恐怖を使った不足煽りでもありません。現在どのresourceがWorld／Labのbottleneckかを、観測時刻と一緒に表示するCapability HUDです。
+
+<SupplyHud />
+
+`UNKNOWN`は不足でも充足でもありません。operatorが公開可能な観測値を入力した場合だけ状態を変更します。
+
+Legal / IPについて、過去の専門家利用を現在の全成果物へのendorsementへ変換しません。baselineとcontinuous counselを表示する場合も、現在の契約・資源を個別に確認します。
