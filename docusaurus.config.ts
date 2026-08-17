@@ -94,6 +94,7 @@ const config: Config = {
   },
   themes: ['@docusaurus/theme-mermaid'],
   plugins: [
+    './plugins/patron-data-export/index.mjs',
     [
       '@docusaurus/plugin-client-redirects',
       {

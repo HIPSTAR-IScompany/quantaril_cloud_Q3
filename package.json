@@ -28,6 +28,7 @@
     "content:check-attribution": "node pipeline/scripts/check-attribution.mjs",
     "content:check-seo": "node pipeline/scripts/check-seo.mjs",
     "content:check-redirects": "node pipeline/scripts/check-redirects.mjs",
+    "content:check-patron": "node pipeline/scripts/check-patron.mjs",
     "write-translations": "docusaurus write-translations",
     "write-heading-ids": "docusaurus write-heading-ids",
     "typecheck": "tsc"

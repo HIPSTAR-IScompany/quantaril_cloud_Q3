@@ -1,0 +1,14 @@
+{
+  "schema": "q-atlantis-patron-supply/1",
+  "updatedAt": null,
+  "records": [
+    {"id": "domain-hosting", "label": "Domain / Hosting", "status": "UNKNOWN", "updatedAt": null, "note": null},
+    {"id": "power", "label": "Power", "status": "UNKNOWN", "updatedAt": null, "note": null},
+    {"id": "storage", "label": "Storage", "status": "UNKNOWN", "updatedAt": null, "note": null},
+    {"id": "compute", "label": "Compute", "status": "UNKNOWN", "updatedAt": null, "note": null},
+    {"id": "fabrication", "label": "Fabrication / Consumables", "status": "UNKNOWN", "updatedAt": null, "note": null},
+    {"id": "transport", "label": "Transport", "status": "UNKNOWN", "updatedAt": null, "note": null},
+    {"id": "food-field-support", "label": "Food / Field Support", "status": "UNKNOWN", "updatedAt": null, "note": null},
+    {"id": "legal-ip", "label": "Legal / IP Counsel", "status": "UNKNOWN", "updatedAt": null, "note": null}
+  ]
+}
