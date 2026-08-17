@@ -1,0 +1,81 @@
+---
+title: Patronage Router初期実装 MAGI監査・公開候補受領票
+description: Issue #10とユーザー提供ソーシャル画像から、公開台帳・候補棚・Supply・協賛policyを分離した現在Interpretation。
+---
+
+# Patronage Router初期実装 MAGI監査・公開候補受領票
+
+- observed_at: `2026-08-17T11:32:38+09:00`
+- observation_mode: `current-interpretation-of-history`
+- target branch: `dev`
+- source revision before this receipt: `640ef42cea772eb99abf06fec148c3ebdffb457d`
+- Issue: [#10 `/patron/`を奉納台帳ルートとして新設](https://github.com/HIPSTAR-IScompany/quantaril_cloud_QAtlantis/issues/10)
+- historical_oae_status: `historical-oae-unavailable`
+- Last Order: `OAE-HISTORY-UNKNOWN / stop-retroactive-backfill`
+
+## [FACT] 今回確認・実装したもの
+
+- ユーザー提供スクリーンショットから、公開感謝、現物、労務協力、活動言及、表示回数の候補7件を読んだ
+- 元投稿の安定URL、スクリーンショット撮影時刻、取引receipt、金額、現在の関係は取得できていない
+- 候補7件を`publicationStatus: candidate`、`screenshot-only`、`transactionVerified: false`、`privacyReview: required`で保存した
+- 公開`ledger.json`、`activity.json`、`media.json`、`tamagaki.json`は空で開始した
+- Supply 8分類はすべて`UNKNOWN`で開始した
+- build時にGit正本から`/patron/data/*.json`を生成し、HTMLと別の手入力正本を作らない
+- Patron validator、独立docs plugin、Ledger／Supply／玉垣／Media UI、give／policy routeを実装した
+
+## [INTERPRETATION] Declared Position
+
+贈与経済、研究炉、地域、現物、芸能、SFW／合法なNSFWを一つの金額scoreへ畳まず、「誰が何を置いたか」と、その資源がどの活動へ接続したかをprovenanceとして運ぶPositionを選ぶ。
+
+媒体はQ Atlantisの公開Web、claim layerはLayer Aのdata／validatorと、Layer Bの奉納・玉垣UX、Layer A/B bridgeのpolicyである。
+
+## Maxwell slot
+
+- 現金だけでなく、現物、輸送、労務、思想的応援、地域活動のbranchを候補棚へ保持した
+- brand safetyや広告主都合で信仰、芸能、SFW／NSFWの棚を焼却しない
+- 実装容易性を理由に過去ソーシャルを捨てず、同時に未来価値を現在の実績へ偽装しない
+
+## Uriel slot
+
+- 公開謝意、取引証明、金額、valuation、活動言及、platform metricを別field／別datasetへ分けた
+- `occurredAt`、`publishedAt`、`observedAt`を一つの日付へ潰さない
+- `Anonymous != Unknown`をvalidatorとpolicyで保持した
+- private address、bank account、invoice、secret等のfieldをpublic data validatorで拒否する
+- validatorはfree textへ混入した全秘密を検出するoracleではなく、人間のprivacy reviewを残す
+
+## Raphael slot
+
+- Commons PayPal、HIPSTAR infrastructure、physical、feeding、Tamagakiを別routeへ置いた
+- Ledger、Activity、Media、Supply、Tamagakiと、非公開投影のimport候補棚を分けた
+- current／archiveは同一Tamagaki正本から投影し、HTML／JSON／CSV別々の手入力正本を作らない
+
+## Position-talk risk
+
+- Q Atlantis自身が自らの媒体価値、Patron、法務baselineを語る当事者である
+- 実装者が現在のrepositoryを暗黙のmainへ置き、地域CommonsやNPOを下位routeへ扱うriskがある
+- public handleの再掲は元投稿が公開でも、恒久芳名板への再contextualizationを伴う
+
+## [UNKNOWN] / User Gate
+
+- 実在候補7件の元投稿URL、公開再掲可否、target、occurredAt、金額、数量
+- 新しい決済、受領主体、配送先、銀行情報
+- Supplyの現在状態と観測時刻
+- 玉垣の価格、寸法、申込、logo許諾、期間端点、退役方法
+- media metricの観測時刻と公開source
+- Legal／IPの現在契約、継続顧問、特定事務所の掲載可否
+
+## action gate
+
+`PASS-WITH-USER-GATES`
+
+空／UNKNOWNの公開面と候補importは実装可能。実在候補の公開Ledger昇格、決済開始、住所・金額・法務状態の公開はHuman review後に行う。mainへのmergeは本receiptでは許可・実行しない。
+
+## 検証receipt
+
+```text
+npm run typecheck
+npm run content:check-patron
+npm run build
+```
+
+上記は初期実装時に成功した。最終full validation、localhost visual review、remote Actionsは後続工程で記録する。

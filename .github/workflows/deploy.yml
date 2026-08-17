@@ -33,6 +33,9 @@ jobs:
       - name: Type check
         run: npm run typecheck
 
+      - name: Patron public data and import candidate check
+        run: npm run content:check-patron
+
       - name: Build (Docusaurus, ja locale)
         run: npm run build
         env:
@@ -42,6 +45,12 @@ jobs:
         run: |
           test -d build || (echo "build directory missing" && exit 1)
           test -f build/index.html || (echo "index.html missing" && exit 1)
+          test -f build/patron/index.html || (echo "patron route missing" && exit 1)
+          test -f build/patron/data/ledger.json || (echo "patron ledger artifact missing" && exit 1)
+          test -f build/patron/data/activity.json || (echo "patron activity artifact missing" && exit 1)
+          test -f build/patron/data/media.json || (echo "patron media artifact missing" && exit 1)
+          test -f build/patron/data/supply.json || (echo "patron supply artifact missing" && exit 1)
+          test -f build/patron/data/tamagaki.json || (echo "patron tamagaki artifact missing" && exit 1)
 
       # content:check (転送キュー検証) はCIに含めない: pipeline/transfer-queue.jsonの
       # source.pathが兄弟リポジトリ(ZeroRoomLab-manifest)を指す設計のため、単独checkoutの

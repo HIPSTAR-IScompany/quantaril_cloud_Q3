@@ -10,15 +10,18 @@ Q Atlantisは、上流、神話、創業者、コミュニティ、正統性、�
 
 - [公開カンパとNon-Exclusive Seed Stewardの説明](https://quantaril.cloud/about/stewardship)
 - [Q AtlantisトップのPayPalフォーム](https://quantaril.cloud/#support)
+- [Patron Ledger / 奉納台帳](https://quantaril.cloud/patron/)
 - [Q Atlantisでの資金・系譜実装契約](docs/operations/funding-and-lineage-integration.md)
 
 トップのPayPalフォームは、Q Atlantis単体の持分販売や直接投資ではありません。置賜郡射程の文化保護NPOと地域活動へ入り、その時点の文化、福祉、交通、設備、広報、町おこし等へ非線形に巡る公開カンパです。
+
+`/patron/`は、HIPSTAR／Q Atlantisの研究炉、現物、餌付け、玉垣協賛広告、地域Commonsへのlinkoutを目的別に分けるPatronage Routerです。トップのCommons向けPayPalを置換せず、同じ財布として表示しません。現時点では新しい決済、振込口座、配送先、玉垣申込受付を開始していません。
 
 齋藤みつる本人への直接支援や現物相談は、X（[@K_chachamaru](https://x.com/K_chachamaru)）で公開メンションにより贈与意思を知らせた後、秘密情報をDMだけで扱ってください。
 
 ## 芳名台帳
 
-資源提供が実際に出来事を起動した場合、GitHub、制作日誌、Web、映像、配信、神話等の来歴へ残ることがあります。これは神話の芳名台帳――provenanceであり、広告、議決権、正統性、成果保証ではありません。
+資源提供が実際に出来事を起動した場合、GitHub、制作日誌、Web、映像、配信、神話、[Patron Ledger](https://quantaril.cloud/patron/)等の来歴へ残ることがあります。これは神話の芳名台帳――provenanceであり、広告、議決権、正統性、成果保証ではありません。過去ソーシャルの感謝投稿は候補棚で検証し、投稿が読めたことを取引証明へ昇格させません。
 
 ## フォークと商用利用
 

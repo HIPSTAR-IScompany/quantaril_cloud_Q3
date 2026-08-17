@@ -82,6 +82,8 @@ Q Atlantisが募集するのは、未来そのものを買う所有者ではな�
 
 [支援フォームと現在の説明を見る](https://quantaril.cloud/#support)
 
+[Patron Ledger / 奉納台帳](/patron/)は、HIPSTAR／Q Atlantis基盤、現物、餌付け、玉垣協賛広告、地域Commonsへのlinkoutを別routeへ分けます。トップのPayPalと同じ財布ではなく、この導線だけで新しい決済や受付が始まったことにもなりません。
+
 齋藤みつる本人への直接支援や現物相談は、[X（@K_chachamaru）](https://x.com/K_chachamaru)の公開メンションから贈与意思を知らせた後、秘密情報をDMだけで扱ってください。
 
 ## 正本とQ Atlantisでの実装
@@ -92,4 +94,5 @@ Q Atlantisが募集するのは、未来そのものを買う所有者ではな�
 - [Non-Exclusive Seed Steward正本](https://github.com/saitoomituru/ZeroRoomLab-manifest/blob/main/docs/funding/non-exclusive-seed-steward.ja.md)
 - [Open Lineage / Fork / 正統性ポリシー](https://github.com/saitoomituru/ZeroRoomLab-manifest/blob/main/docs/funding/open-lineage-and-fork-policy.ja.md)
 - [Q Atlantisでの資金・系譜実装](/docs/operations/funding-and-lineage-integration)
+- [Patron Ledger / 奉納台帳](/patron/)
 - [岩戸を開く身体――アメノウズメと日本の再起動](./uzume-and-japan.md)

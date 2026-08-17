@@ -6,7 +6,7 @@ description: Manifest正本をQ Atlantisの支援面、fork、商用利用、lin
 # Q Atlantisの資金・系譜実装契約
 
 - Status: `REPOSITORY-INTEGRATION / PUBLIC-POLICY`
-- Updated: 2026-07-26
+- Updated: 2026-08-17
 - Canonical revision observed: `ZeroRoomLab-manifest#8 / 53fb377e`
 
 この文書は、ZeroRoomLab-manifestの横断方針を、Q Atlantisの公開サイト、repository、支援面、派生productへどう適用するかを定めます。正本の機械的な複製ではなく、Q Atlantis固有のadapterです。
@@ -16,6 +16,7 @@ description: Manifest正本をQ Atlantisの支援面、fork、商用利用、lin
 | 入口 | 現在の意味 | 意味しないもの |
 |---|---|---|
 | トップページのPayPal | 置賜郡射程の文化保護NPO・地域活動への公開カンパ | Q Atlantis単体への直接投資、持分購入、用途指定 |
+| [Patron Ledger / 奉納台帳](/patron/) | HIPSTAR／Q Atlantis基盤、現物、餌付け、玉垣、Commons linkoutを分けるprovenance UI | 新しい決済の自動開始、Patron ranking、取引・金額の自動証明 |
 | X経由の直接相談 | 齋藤みつる本人への贈与・現物相談の連絡路 | 作者側からの個別ギフト券勧誘、公開場所での秘密情報受領 |
 | Non-Exclusive Seed Steward | 長期責任を用途・期間・上限等で分けて支える契約前方針 | 現在募集済みの証券、株式、債権、返済商品 |
 
@@ -50,6 +51,8 @@ Patron自身も、Q Atlantis以外の研究所、OSS、芸術、startupへ支援
 - 金額による票ではない
 - 公式性・正統性・教義決定権ではない
 - 成果、利益、返済の保証ではない
+
+過去ソーシャルの感謝投稿は、まず`user-provided-screenshot / screenshot-only`のimport候補として保持します。元URL、target、公開attribution、privacyを確認するまで公開Ledgerへ自動反映せず、投稿が存在したことを`transactionVerified`や金額証明へ変換しません。媒体表示回数も`observedAt`とsourceが揃うまでpublic media recordへ昇格させません。
 
 ## fork・Remix・商用product
 
