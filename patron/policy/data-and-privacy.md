@@ -35,4 +35,6 @@ social screenshot
 
 `screenshot-only`は公開投稿の記載を確認した強度です。`receipt-backed`や`transactionVerified`へ自動昇格しません。
 
+将来の課金は、公開テキストと受付条件のHuman review後、HIPSTAR保有のStripe決済ゲートへ接続します。決済契約と決済処理の主体はHIPSTARであり、作者個人の決済資産として扱いません。processor上の顧客情報、transaction ID、支払手段、請求・紛争情報を公開奉納台帳へ自動転記せず、公開recordには承認された表示名、target、公開可能なprovenanceだけを分離して投影します。
+
 同様に、公開record、Issue、Patronage、source codeの利用は、製造委託、共同製造、製品保証、事故対応、無制限補償の受付証拠ではありません。HIPSTAR／Q Atlantisは製造責任が必要な責務を受付・履行・保証しません。どの範囲が該当するかは、消費者庁の公式Q&Aへ案内する[Scope and liability](./scope-and-liability)を参照してください。

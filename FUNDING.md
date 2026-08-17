@@ -15,7 +15,7 @@ Q Atlantisは、上流、神話、創業者、コミュニティ、正統性、�
 
 トップのPayPalフォームは、Q Atlantis単体の持分販売や直接投資ではありません。置賜郡射程の文化保護NPOと地域活動へ入り、その時点の文化、福祉、交通、設備、広報、町おこし等へ非線形に巡る公開カンパです。
 
-`/patron/`は、HIPSTAR／Q Atlantisの研究炉、現物、餌付け、玉垣協賛広告、地域Commonsへのlinkoutを目的別に分けるPatronage Routerです。トップのCommons向けPayPalを置換せず、同じ財布として表示しません。現時点では新しい決済、振込口座、配送先、玉垣申込受付を開始していません。
+`/patron/`は、HIPSTAR／Q Atlantisの研究炉、現物、餌付け、玉垣協賛広告、地域Commonsへのlinkoutを目的別に分けるPatronage Routerです。トップのCommons向けPayPalを置換せず、同じ財布として表示しません。現時点では新しい決済、振込口座、配送先、玉垣申込受付を開始していませんが、これは恒久的に決済を接続しないという意味ではありません。公開テキスト、受付条件、商品・役務scopeのHuman review完了後、HIPSTARが保有するStripe決済ゲートを接続します。決済契約・売上受領の主体はHIPSTARであり、作者個人の決済資産・個人財布として表示しません。
 
 齋藤みつる本人への直接支援や現物相談は、X（[@K_chachamaru](https://x.com/K_chachamaru)）で公開メンションにより贈与意思を知らせた後、秘密情報をDMだけで扱ってください。
 

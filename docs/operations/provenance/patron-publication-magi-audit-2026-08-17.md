@@ -102,3 +102,23 @@ Userは、初期文面が「第三者が製造責任範囲の用法を強行す�
 - Uriel: license上の利用自由、契約上の受任、法定責任、個別事実を別定規へ分離する
 - Raphael: upstream開発、downstream製造、Patron、顧客対応を同一役へmergeせず接続する
 - action gate: `REVISE-THEN-PASS`
+
+## 2026-08-17 決済主体と接続GateのUser訂正
+
+### [USER-DECLARED FACT]
+
+- Patron routeには、公開テキスト完成後に課金システムを接続する
+- 接続先はHIPSTARが保有するStripe決済ゲートであり、齋藤みつる個人の決済資産ではない
+
+### [FIX]
+
+- 「未実装」を恒久的な決済非対応と読ませず、テキスト・受付条件・価格・役務scopeのHuman review後に接続する暫定Gateへ修正した
+- merchant、決済契約、売上受領主体をHIPSTARへ置き、作者個人の財布・資産と分離した
+- 決済processorの非公開情報と、公開奉納台帳へ投影できるprovenanceを分離した
+- 決済接続を、製造責任が必要な責務の受付開始へ昇格させないと明示した
+
+### action gate
+
+`TEXT-REVIEW -> PAYMENT-INTEGRATION -> HUMAN-CHECK`
+
+本修正ではcredential、price ID、webhook secret、live modeを操作しない。決済接続はテキストのHuman review完了後に行う。

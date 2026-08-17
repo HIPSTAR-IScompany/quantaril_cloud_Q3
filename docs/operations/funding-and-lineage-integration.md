@@ -16,11 +16,13 @@ description: Manifest正本をQ Atlantisの支援面、fork、商用利用、lin
 | 入口 | 現在の意味 | 意味しないもの |
 |---|---|---|
 | トップページのPayPal | 置賜郡射程の文化保護NPO・地域活動への公開カンパ | Q Atlantis単体への直接投資、持分購入、用途指定 |
-| [Patron Ledger / 奉納台帳](/patron/) | HIPSTAR／Q Atlantis基盤、現物、餌付け、玉垣、Commons linkoutを分けるprovenance UI | 新しい決済の自動開始、Patron ranking、取引・金額の自動証明 |
+| [Patron Ledger / 奉納台帳](/patron/) | HIPSTAR／Q Atlantis基盤、現物、餌付け、玉垣、Commons linkoutを分け、Human review後にHIPSTAR保有のStripe決済ゲートへ接続するprovenance UI | テキスト確定前の課金開始、個人財布への接続、Patron ranking、取引・金額の自動証明 |
 | X経由の直接相談 | 齋藤みつる本人への贈与・現物相談の連絡路 | 作者側からの個別ギフト券勧誘、公開場所での秘密情報受領 |
 | Non-Exclusive Seed Steward | 長期責任を用途・期間・上限等で分けて支える契約前方針 | 現在募集済みの証券、株式、債権、返済商品 |
 
 [公開カンパとNon-Exclusive Seed Stewardの説明](/about/stewardship)は、支援前に読める単体Presentationです。
+
+Patron routeの決済非接続は暫定Gateであり、恒久方針ではありません。公開テキスト、受付条件、価格、役務scopeのHuman review完了後、HIPSTARが保有するStripe決済ゲートを接続します。merchant／決済契約／売上受領主体はHIPSTARであり、齋藤みつる個人の決済資産・個人財布へ帰属させません。credential、processor transaction ID、顧客情報、chargeback情報は非公開境界に保持し、公開Ledgerへ自動投影しません。
 
 ## 資金で動かさないもの
 
