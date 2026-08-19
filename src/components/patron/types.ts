@@ -41,14 +41,41 @@ export type SupplyRecord = {
 export type TamagakiRecord = {
   id: string;
   patronRef: string;
+  offeringId: 'physical-tamagaki';
   cycle: string;
-  startsAt: string;
-  expiresAt: string;
+  acceptedSequence: number;
+  acceptedAt: string;
+  publishedAt: string | null;
+  termStartsAt: string;
+  termEndsAt: string;
   status: 'SCHEDULED' | 'ACTIVE' | 'RETIRED' | 'CANCELLED';
   label: string;
   logo: string | null;
   url: string | null;
   disclosure: 'sponsored-advertising';
+  unitCount: number;
+  amountTaxIncludedJpy: number | null;
+  plaqueCount: 1;
+  nameplateSpecId: string;
+  publicationConsent: {
+    displayName: true;
+    logo: boolean;
+    url: boolean;
+    amount: boolean;
+    unitCount: boolean;
+  };
+  placement: {
+    zone: string;
+    installedAt: string | null;
+    relocatedAt: string | null;
+    relocationReason: string | null;
+  };
+  audit: {
+    nextDueAt: string | null;
+    receiptRefs: string[];
+    remediationStatus: 'NONE' | 'OPEN' | 'RECOVERING' | 'RESOLVED';
+    serviceInterruption: boolean;
+  };
 };
 
 export type MediaRecord = {

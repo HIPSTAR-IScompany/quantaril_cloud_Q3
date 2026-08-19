@@ -2,7 +2,10 @@ import tamagakiSource from '@site/data/patron/tamagaki.json';
 import styles from './styles.module.css';
 import type {TamagakiRecord} from './types';
 
-const records = tamagakiSource.records as TamagakiRecord[];
+const records = [...(tamagakiSource.records as TamagakiRecord[])].sort((left, right) => {
+  const cycleOrder = right.cycle.localeCompare(left.cycle);
+  return cycleOrder === 0 ? left.acceptedSequence - right.acceptedSequence : cycleOrder;
+});
 
 export default function TamagakiCurrent({view = 'current'}: {view?: 'current' | 'archive'}) {
   const selected = records.filter((record) =>
@@ -26,7 +29,8 @@ export default function TamagakiCurrent({view = 'current'}: {view?: 'current' | 
         <article className={styles.tamagakiCard} key={record.id}>
           <p className={styles.kicker}>協賛広告 / {record.cycle}</p>
           <h2>{record.label}</h2>
-          <p>{record.startsAt} — {record.expiresAt}</p>
+          <p>{record.termStartsAt} — {record.termEndsAt}</p>
+          <p>受付順 {record.acceptedSequence}</p>
           <span className={styles.status}>{record.status}</span>
         </article>
       ))}

@@ -1,5 +1,6 @@
 {
-  "schema": "q-atlantis-patron-tamagaki/1",
-  "updatedAt": null,
+  "schema": "q-atlantis-patron-tamagaki/2",
+  "updatedAt": "2026-08-19T17:27:25+09:00",
+  "recordOrdering": "acceptedSequence-asc-within-cycle",
   "records": []
 }

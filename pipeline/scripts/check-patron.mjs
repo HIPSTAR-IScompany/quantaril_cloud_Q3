@@ -17,7 +17,7 @@ const publicContracts = new Map([
   ['activity.json', 'q-atlantis-patron-activity/1'],
   ['media.json', 'q-atlantis-patron-media/1'],
   ['supply.json', 'q-atlantis-patron-supply/1'],
-  ['tamagaki.json', 'q-atlantis-patron-tamagaki/1'],
+  ['tamagaki.json', 'q-atlantis-patron-tamagaki/2'],
   ['offerings.json', 'q-atlantis-patron-offerings/1'],
 ]);
 
@@ -191,13 +191,42 @@ for (const [fileName, schema] of publicContracts) {
   }
 
   if (fileName === 'tamagaki.json') {
+    const acceptedSequences = new Set();
     document.records.forEach((record, index) => {
       const recordLocation = `${location}.records[${index}]`;
       if (!tamagakiStatuses.has(record.status)) fail(`${recordLocation}.status`, `未知の玉垣status: ${record.status}`);
-      if (!isNullableDate(record.startsAt) || record.startsAt === null) fail(`${recordLocation}.startsAt`, 'ISO dateが必要です');
-      if (!isNullableDate(record.expiresAt) || record.expiresAt === null) fail(`${recordLocation}.expiresAt`, 'ISO dateが必要です');
-      if (record.startsAt && record.expiresAt && record.startsAt > record.expiresAt) fail(recordLocation, 'startsAtがexpiresAtより後です');
+      if (record.offeringId !== 'physical-tamagaki') fail(`${recordLocation}.offeringId`, '物理玉垣recordである必要があります');
+      if (!Number.isInteger(record.acceptedSequence) || record.acceptedSequence < 1) {
+        fail(`${recordLocation}.acceptedSequence`, '1以上の整数が必要です');
+      } else {
+        const sequenceKey = `${record.cycle}:${record.acceptedSequence}`;
+        if (acceptedSequences.has(sequenceKey)) fail(`${recordLocation}.acceptedSequence`, `cycle内で重複しています: ${sequenceKey}`);
+        acceptedSequences.add(sequenceKey);
+      }
+      if (!isNullableTimestamp(record.acceptedAt) || record.acceptedAt === null) fail(`${recordLocation}.acceptedAt`, '受付確定timestampが必要です');
+      if (!isNullableTimestamp(record.publishedAt ?? null)) fail(`${recordLocation}.publishedAt`, 'timezone付きtimestampまたはnullが必要です');
+      if (!isNullableDate(record.termStartsAt) || record.termStartsAt === null) fail(`${recordLocation}.termStartsAt`, 'ISO dateが必要です');
+      if (!isNullableDate(record.termEndsAt) || record.termEndsAt === null) fail(`${recordLocation}.termEndsAt`, 'ISO dateが必要です');
+      if (record.termStartsAt && record.termEndsAt && record.termStartsAt > record.termEndsAt) fail(recordLocation, 'termStartsAtがtermEndsAtより後です');
       if (record.disclosure !== 'sponsored-advertising') fail(`${recordLocation}.disclosure`, '玉垣はsponsored-advertisingを明示します');
+      if (!Number.isInteger(record.unitCount) || record.unitCount < 1) fail(`${recordLocation}.unitCount`, '1以上の整数が必要です');
+      if (record.plaqueCount !== 1) fail(`${recordLocation}.plaqueCount`, '同一主体・同一termの銘板は1枚です');
+      if (typeof record.nameplateSpecId !== 'string' || record.nameplateSpecId.trim() === '') {
+        fail(`${recordLocation}.nameplateSpecId`, '公開recordには確定済み銘板仕様IDが必要です');
+      }
+      if (record.publicationConsent?.displayName !== true) fail(`${recordLocation}.publicationConsent.displayName`, '公開表示名への同意が必要です');
+      if (record.publicationConsent?.amount !== true && record.amountTaxIncludedJpy !== null) {
+        fail(`${recordLocation}.amountTaxIncludedJpy`, '金額同意がない場合はnullにします');
+      }
+      if (record.publicationConsent?.logo !== true && record.logo !== null) fail(`${recordLocation}.logo`, 'logo同意がない場合はnullにします');
+      if (record.publicationConsent?.url !== true && record.url !== null) fail(`${recordLocation}.url`, 'URL同意がない場合はnullにします');
+      if (!record.placement || typeof record.placement.zone !== 'string' || record.placement.zone.trim() === '') {
+        fail(`${recordLocation}.placement.zone`, '表示zoneが必要です');
+      }
+      if (!isNullableTimestamp(record.placement?.installedAt ?? null)) fail(`${recordLocation}.placement.installedAt`, 'timezone付きtimestampまたはnullが必要です');
+      if (!isNullableTimestamp(record.placement?.relocatedAt ?? null)) fail(`${recordLocation}.placement.relocatedAt`, 'timezone付きtimestampまたはnullが必要です');
+      if (!isNullableDate(record.audit?.nextDueAt ?? null)) fail(`${recordLocation}.audit.nextDueAt`, 'ISO dateまたはnullが必要です');
+      if (!Array.isArray(record.audit?.receiptRefs)) fail(`${recordLocation}.audit.receiptRefs`, '配列が必要です');
     });
   }
 
