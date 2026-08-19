@@ -18,7 +18,10 @@ const publicContracts = new Map([
   ['media.json', 'q-atlantis-patron-media/1'],
   ['supply.json', 'q-atlantis-patron-supply/1'],
   ['tamagaki.json', 'q-atlantis-patron-tamagaki/1'],
+  ['offerings.json', 'q-atlantis-patron-offerings/1'],
 ]);
+
+const servicePath = path.join(dataDirectory, 'service.json');
 
 const forbiddenKeys = new Set([
   'address',
@@ -43,6 +46,11 @@ const attributionModes = new Set([
 ]);
 const supplyStatuses = new Set(['UNKNOWN', 'DORMANT', 'LOW', 'STABLE', 'SURPLUS']);
 const tamagakiStatuses = new Set(['SCHEDULED', 'ACTIVE', 'RETIRED', 'CANCELLED']);
+const serviceStatuses = new Set(['PRELAUNCH', 'OPEN', 'PAUSED']);
+const offeringAvailabilities = new Set(['PRELAUNCH', 'OPEN', 'PAUSED', 'SOLD_OUT']);
+const offeringSpecStatuses = new Set(['ADJUSTING', 'CONFIRMED', 'NOT_APPLICABLE']);
+const offeringTermStatuses = new Set(['ADJUSTING', 'CONFIRMED']);
+const contactPrivacyModes = new Set(['private-contact', 'public-intake', 'follow-channel-guidance']);
 const candidateClasses = new Set([
   'contribution',
   'collaboration',
@@ -203,6 +211,89 @@ for (const [fileName, schema] of publicContracts) {
       if (!isNullableTimestamp(record.observedAt) || record.observedAt === null) fail(`${recordLocation}.observedAt`, '観測timestampが必要です');
     });
   }
+
+  if (fileName === 'offerings.json') {
+    document.records.forEach((record, index) => {
+      const recordLocation = `${location}.records[${index}]`;
+      if (!offeringAvailabilities.has(record.availability)) {
+        fail(`${recordLocation}.availability`, `未知のavailability: ${record.availability}`);
+      }
+      if (!offeringSpecStatuses.has(record.specStatus)) {
+        fail(`${recordLocation}.specStatus`, `未知のspec status: ${record.specStatus}`);
+      }
+      for (const field of ['priceTaxExcludedJpy', 'priceTaxIncludedJpy']) {
+        if (!Number.isInteger(record[field]) || record[field] < 0) {
+          fail(`${recordLocation}.${field}`, '0以上の整数が必要です');
+        }
+      }
+      if (record.taxRate !== 0.1) fail(`${recordLocation}.taxRate`, '現在の公開価格はtaxRate 0.1で検算します');
+      if (record.priceTaxIncludedJpy !== Math.round(record.priceTaxExcludedJpy * (1 + record.taxRate))) {
+        fail(recordLocation, '税込価格と税抜価格・税率が一致しません');
+      }
+      if (!Number.isInteger(record.unitCountMin) || record.unitCountMin < 1) {
+        fail(`${recordLocation}.unitCountMin`, '1以上の整数が必要です');
+      }
+      if (record.unitCountMax !== null && (!Number.isInteger(record.unitCountMax) || record.unitCountMax < record.unitCountMin)) {
+        fail(`${recordLocation}.unitCountMax`, 'nullまたはunitCountMin以上の整数が必要です');
+      }
+      if (!Number.isInteger(record.publicDisplayCountPerEntityPerTerm) || record.publicDisplayCountPerEntityPerTerm !== 1) {
+        fail(`${recordLocation}.publicDisplayCountPerEntityPerTerm`, '同一主体・同一termの公開表示は1件です');
+      }
+      if (![0, 1].includes(record.plaqueCountPerEntityPerTerm)) {
+        fail(`${recordLocation}.plaqueCountPerEntityPerTerm`, '銘板数は0または1です');
+      }
+      if (!record.term || !offeringTermStatuses.has(record.term.status)) {
+        fail(`${recordLocation}.term.status`, 'ADJUSTINGまたはCONFIRMEDが必要です');
+      }
+      if (record.availability === 'PRELAUNCH' && record.checkoutEnabled !== false) {
+        fail(`${recordLocation}.checkoutEnabled`, 'PRELAUNCHでは決済を有効化できません');
+      }
+      if (record.specStatus === 'ADJUSTING' && record.checkoutEnabled !== false) {
+        fail(`${recordLocation}.checkoutEnabled`, '仕様調整中の役務では決済を有効化できません');
+      }
+      if (record.plaqueCountPerEntityPerTerm === 1 && record.physicalSlotLimit === null && record.checkoutEnabled !== false) {
+        fail(`${recordLocation}.checkoutEnabled`, '物理枠数未確定では決済を有効化できません');
+      }
+    });
+  }
+}
+
+const service = loadJson(servicePath);
+const serviceLocation = 'data/patron/service.json';
+if (service) {
+  if (service.schema !== 'q-atlantis-patron-service/1') fail(serviceLocation, 'service schemaが一致しません');
+  if (!isNullableTimestamp(service.updatedAt) || service.updatedAt === null) {
+    fail(`${serviceLocation}.updatedAt`, '観測timestampが必要です');
+  }
+  if (!serviceStatuses.has(service.status)) fail(`${serviceLocation}.status`, `未知のservice status: ${service.status}`);
+  for (const field of ['applicationsEnabled', 'checkoutEnabled', 'earlyContactEnabled']) {
+    if (typeof service[field] !== 'boolean') fail(`${serviceLocation}.${field}`, 'booleanが必要です');
+  }
+  if (service.status === 'PRELAUNCH' && (service.applicationsEnabled || service.checkoutEnabled)) {
+    fail(serviceLocation, 'PRELAUNCHでは申込・決済を有効化できません');
+  }
+  if (!/^0\d{1,4}-\d{1,4}-\d{3,4}$/.test(service.contact?.telephone ?? '')) {
+    fail(`${serviceLocation}.contact.telephone`, '公開用の日本国内電話番号形式が必要です');
+  }
+  if (service.contact?.telephoneMode !== 'voicemail-callback') {
+    fail(`${serviceLocation}.contact.telephoneMode`, '現在の電話受付はvoicemail-callbackです');
+  }
+  if (!Array.isArray(service.contact?.routes) || service.contact.routes.length === 0) {
+    fail(`${serviceLocation}.contact.routes`, '1件以上の連絡routeが必要です');
+  } else {
+    service.contact.routes.forEach((route, index) => {
+      const routeLocation = `${serviceLocation}.contact.routes[${index}]`;
+      if (!route.kind || !route.label) fail(routeLocation, 'kindとlabelが必要です');
+      try {
+        const url = new URL(route.url);
+        if (url.protocol !== 'https:') fail(`${routeLocation}.url`, 'https URLが必要です');
+      } catch {
+        fail(`${routeLocation}.url`, '有効なURLが必要です');
+      }
+      if (!contactPrivacyModes.has(route.privacy)) fail(`${routeLocation}.privacy`, `未知のprivacy mode: ${route.privacy}`);
+    });
+  }
+  scanForbiddenKeys(service, serviceLocation);
 }
 
 const candidates = loadJson(candidatePath);

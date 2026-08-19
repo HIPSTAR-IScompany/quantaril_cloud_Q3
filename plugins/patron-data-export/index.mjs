@@ -1,7 +1,15 @@
 import {copyFile, mkdir} from 'node:fs/promises';
 import path from 'node:path';
 
-const publicFiles = ['ledger.json', 'activity.json', 'media.json', 'supply.json', 'tamagaki.json'];
+const publicFiles = [
+  'ledger.json',
+  'activity.json',
+  'media.json',
+  'supply.json',
+  'tamagaki.json',
+  'offerings.json',
+  'service.json',
+];
 
 export default function patronDataExportPlugin(context) {
   const sourceDirectory = path.join(context.siteDir, 'data', 'patron');
