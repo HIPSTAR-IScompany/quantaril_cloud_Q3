@@ -62,3 +62,46 @@ export type MediaRecord = {
   sourceRef: string;
   notes: string;
 };
+
+export type PatronService = {
+  schema: 'q-atlantis-patron-service/1';
+  updatedAt: string;
+  status: 'PRELAUNCH' | 'OPEN' | 'PAUSED';
+  statusLabel: string;
+  applicationsEnabled: boolean;
+  checkoutEnabled: boolean;
+  earlyContactEnabled: boolean;
+  contact: {
+    telephone: string;
+    telephoneMode: 'voicemail-callback';
+    routes: Array<{
+      kind: string;
+      label: string;
+      url: string;
+      privacy: 'private-contact' | 'public-intake' | 'follow-channel-guidance';
+    }>;
+  };
+};
+
+export type PatronOffering = {
+  id: string;
+  label: string;
+  availability: 'PRELAUNCH' | 'OPEN' | 'PAUSED' | 'SOLD_OUT';
+  priceTaxExcludedJpy: number;
+  priceTaxIncludedJpy: number;
+  taxRate: number;
+  unitCountMin: number;
+  unitCountMax: number | null;
+  publicDisplayCountPerEntityPerTerm: number;
+  plaqueCountPerEntityPerTerm: number;
+  physicalSlotLimit: number | null;
+  term: {
+    mode: 'FROM_PUBLICATION' | 'FIXED_HALF_YEAR';
+    months: number | null;
+    startsFrom: 'publishedAt' | 'cycleStart';
+    status: 'ADJUSTING' | 'CONFIRMED';
+    renewalGates?: string[];
+  };
+  specStatus: 'ADJUSTING' | 'CONFIRMED' | 'NOT_APPLICABLE';
+  checkoutEnabled: boolean;
+};

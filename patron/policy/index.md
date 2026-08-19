@@ -10,5 +10,6 @@ description: Attribution、協賛広告、隣接content、提供scope、公開�
 - [Content adjacency](./content-adjacency)
 - [Scope and liability](./scope-and-liability)
 - [Data and privacy](./data-and-privacy)
+- [特定商取引法に基づく表記（サービス開始前）](./commercial-transactions)
 
 policyはRoot第一表示の世界観を警告文へ書き換えるためではなく、資源、広告、公開記録、責任の誤配線を止めるための専用棚です。

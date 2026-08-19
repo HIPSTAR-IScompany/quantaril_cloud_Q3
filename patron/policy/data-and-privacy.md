@@ -42,3 +42,9 @@ social screenshot
 将来の課金は、公開テキストと受付条件のHuman review後、HIPSTAR保有のStripe決済ゲートへ接続します。決済契約と決済処理の主体はHIPSTARであり、作者個人の決済資産として扱いません。processor上の顧客情報、transaction ID、支払手段、請求・紛争情報を公開奉納台帳へ自動転記せず、公開recordには承認された表示名、target、公開可能なprovenanceだけを分離して投影します。
 
 同様に、公開record、Issue、Patronage、source codeの利用は、製造委託、共同製造、製品保証、事故対応、無制限補償の受付証拠ではありません。HIPSTAR／Q Atlantisは製造責任が必要な責務を受付・履行・保証しません。どの範囲が該当するかは、消費者庁の公式Q&Aへ案内する[Scope and liability](./scope-and-liability)を参照してください。
+
+## DMを個別連絡に使う
+
+公式XやInstagram等のDMは、注文相談、表示名、発送、返金その他の個別連絡に使える非公開入口です。専用formだけを唯一の正規経路にしません。GitHub Issues、YouTube等の公開コメントへ個人情報を書かせず、必要な場合は公式DMへ移動します。
+
+DMでも、目的に必要な範囲を超える情報は集めません。カード番号、暗証番号、passwordはDMで受け付けず、決済開始後もHIPSTARが案内するStripeの決済画面でのみ入力します。DMを公開奉納台帳へ転載する場合は、情報主体が公開を選んだ項目とscopeを別途確認します。

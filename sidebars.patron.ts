@@ -27,6 +27,7 @@ const sidebars: SidebarsConfig = {
         'policy/content-adjacency',
         'policy/scope-and-liability',
         'policy/data-and-privacy',
+        'policy/commercial-transactions',
       ],
     },
   ],

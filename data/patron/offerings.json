@@ -1,0 +1,52 @@
+{
+  "schema": "q-atlantis-patron-offerings/1",
+  "updatedAt": "2026-08-19T17:27:25+09:00",
+  "records": [
+    {
+      "id": "web-tamagaki",
+      "label": "Web玉垣・奉納台帳掲載",
+      "availability": "PRELAUNCH",
+      "priceTaxExcludedJpy": 5000,
+      "priceTaxIncludedJpy": 5500,
+      "taxRate": 0.1,
+      "unitCountMin": 1,
+      "unitCountMax": null,
+      "publicDisplayCountPerEntityPerTerm": 1,
+      "plaqueCountPerEntityPerTerm": 0,
+      "physicalSlotLimit": null,
+      "term": {
+        "mode": "FROM_PUBLICATION",
+        "months": null,
+        "startsFrom": "publishedAt",
+        "status": "ADJUSTING"
+      },
+      "specStatus": "NOT_APPLICABLE",
+      "checkoutEnabled": false
+    },
+    {
+      "id": "physical-tamagaki",
+      "label": "3DP Workbench 物理玉垣協賛広告",
+      "availability": "PRELAUNCH",
+      "priceTaxExcludedJpy": 25000,
+      "priceTaxIncludedJpy": 27500,
+      "taxRate": 0.1,
+      "unitCountMin": 1,
+      "unitCountMax": null,
+      "publicDisplayCountPerEntityPerTerm": 1,
+      "plaqueCountPerEntityPerTerm": 1,
+      "physicalSlotLimit": null,
+      "term": {
+        "mode": "FIXED_HALF_YEAR",
+        "months": 6,
+        "startsFrom": "cycleStart",
+        "status": "CONFIRMED",
+        "renewalGates": [
+          "夏越",
+          "大晦日"
+        ]
+      },
+      "specStatus": "ADJUSTING",
+      "checkoutEnabled": false
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "schema": "q-atlantis-patron-service/1",
+  "updatedAt": "2026-08-19T17:27:25+09:00",
+  "status": "PRELAUNCH",
+  "statusLabel": "サービス開始 乞うご期待",
+  "applicationsEnabled": false,
+  "checkoutEnabled": false,
+  "earlyContactEnabled": true,
+  "contact": {
+    "telephone": "070-8847-9610",
+    "telephoneMode": "voicemail-callback",
+    "routes": [
+      {
+        "kind": "x-dm",
+        "label": "X @K_chachamaru のDM",
+        "url": "https://x.com/K_chachamaru",
+        "privacy": "private-contact"
+      },
+      {
+        "kind": "github-issue",
+        "label": "GitHub Issues",
+        "url": "https://github.com/HIPSTAR-IScompany/quantaril_cloud_QAtlantis/issues",
+        "privacy": "public-intake"
+      },
+      {
+        "kind": "official-media-directory",
+        "label": "ふさもふ関連mediaの案内",
+        "url": "https://github.com/saitoomituru",
+        "privacy": "follow-channel-guidance"
+      }
+    ]
+  }
+}
