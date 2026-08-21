@@ -5,7 +5,7 @@ description: 分散メタエンジン、ASTRO、Server、Fold、P2P true cloud�
 
 # 製品系列と現在能力
 
-更新日: 2026-07-29
+更新日: 2026-08-21
 
 一つの巨大OSを一度に完成させる計画ではありません。既存OS、server、game engine、databaseを尊重し、
 交換可能なcomponentとGateとして育てる製品系列です。
@@ -19,6 +19,9 @@ reference Worldまたは配布候補であり、基盤そのものではあり�
 | Q Atlantis文書・Prompt Engineering Edition | World、意味、参加、監査を自然言語とdocsで探索する公開面 | `AVAILABLE / ALPHA` |
 | SphereOS Atlantis DOS制御面 | Manifest、規約、停止条件、作業経路、Issue、receiptで異種AIの着任を支える | `CONTROL PLANE OPERATING / RUNTIME NOT IMPLEMENTED` |
 | SphereOS Atlantis開発足場 | pinned workspace、doctor、Help、CORN、PLI/CLI境界 | `VALIDATED LOCAL / REVIEW-WANTED` |
+| Reincarnation Lean Kernel試験ハーネス | lease、revision、write-set、OAE commitを分けるファイルシステム判定 | `IMPLEMENTED-HARNESS / CI-VERIFIED` |
+| SphereDOS CodeコックピットGUI | Kernel拒否、provider認証要求、切断復旧可能状態を権限へ昇格させずレンダー | `IMPLEMENTED-HARNESS / INTEGRATION-TEST-PENDING` |
+| Kernel・receipt・コックピットGUI縦結合 | Kernel判定と正式receiptをGUIへ渡す | `NOT STARTED / NOT TESTED` |
 | ASTRO package | 人格・装備・policy・復旧方針、複数Model Variantを持ち運ぶZIP／ZIP64候補 | `TARGET-SPEC / REFORGING` |
 | ASTRO Runner | ASTROをmodel、tool、device、Worldへmountし、canary後に実行 | `TARGET-SPEC / STAGE 0 IN PROGRESS` |
 | Sphere-aae / AAE Bake | 固定したModel FamilyへFAM、LAST_ORDER、Adapter、評価receiptを焼結 | `TARGET-SPEC / INPUT-WAIT` |
@@ -67,6 +70,11 @@ existing system
 `SPEC`は実装済みではありません。`Prompt Engineering Edition`は偽物runtimeではなく、自然言語で設計、Note、
 監査、参加を行える現在のinterfaceです。一方、それを理由にPython、binary、daemon、edge inferenceが完成したとも
 表示しません。
+
+試験ハーネスが存在することも、製品向けKernel、常駐Server、起動可能ISO、インストーラーが完成したことを
+意味しません。詳細はSphereOS-Atlantisの
+[m.6xx.1 機能状態表](https://github.com/saitoomituru/SphereOS-Atlantis/blob/dev/m6xx.1-reincarnation-sdk/docs/status/m6xx-capability-matrix.ja.md)
+を参照してください。
 
 - [Fold7G / Fold8G研究地図](./fold7g-fold8g-research-map.md)
 - [SphereOS Atlantis DOS 初回ブートの現在地](./atlantis-dos-first-boot-status.md)

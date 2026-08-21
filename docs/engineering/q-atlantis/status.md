@@ -4,7 +4,7 @@ title: 実装・移行ステータス
 
 # 実装・移行ステータス
 
-更新日: 2026-07-29
+更新日: 2026-08-21
 
 全体凍結ではありません。開発入口は開いていますが、runtimeとedge実装の火力は不足しています。
 現在の全体表示は`OPEN / RESOURCE-WAIT / REVIEW-WANTED`です。
@@ -17,6 +17,10 @@ title: 実装・移行ステータス
 | FAM | `SPEC / MULTIPLE-LINEAGES` | 旧実装主張と現行toy modelを分離 |
 | SphereOS Atlantis DOS制御面 | `CONTROL PLANE OPERATING / RUNTIME NOT IMPLEMENTED` | 規約、停止条件、資源探索、試験計画、証跡固定の初回ブートを公開 |
 | Architect / Bootstrap足場 | `VALIDATED LOCAL / DESIGN-UNDER-REVIEW` | pinned workspaceと開発足場を維持 |
+| Reincarnation Lean Kernel試験ハーネス | `IMPLEMENTED-HARNESS / CI-VERIFIED` | ファイルシステム上の判定負例を試験。製品向けKernelではない |
+| SphereDOS CodeコックピットGUI | `IMPLEMENTED-HARNESS / INTEGRATION-TEST-PENDING` | GUIレンダー・境界の自動試験18件を確認。実画面の目視確認前 |
+| Kernel・receipt・コックピットGUI縦結合 | `NOT STARTED / NOT TESTED` | Kernel判定をGUIへ渡す縦通し試験を残す |
+| 起動可能ISO・インストーラー | `NOT IMPLEMENTED / NOT PROVIDED` | 完成版OS配布物として表示しない |
 | ASTRO file | `TARGET-SPEC / REFORGING` | ZIP／ZIP64 archive、複数Model Variant、人格Storage、portable profileを整備 |
 | ASTRO Runner | `TARGET-SPEC / STAGE 0 IN PROGRESS` | 責務境界とgeneric Simulator buildの記録あり。正式実機receipt待ち |
 | Sphere-aae / AAE Bake | `TARGET-SPEC / INPUT-WAIT / NOT IMPLEMENTED` | ASTRO Stage 1／2実測後にModel Familyと成果物を固定 |
@@ -32,6 +36,11 @@ title: 実装・移行ステータス
 | Q Atlantis文書サイト | `BUILD/DEPLOY PIPELINE IMPLEMENTED` | devで検証し、mainで本番deploy |
 
 この表は実装状態を表し、神話、人格、体験の価値を格付けするものではありません。新しい証拠や実装が確認された場合は、正本と来歴を添えて更新します。
+
+6xx開発線の多軸状態はSphereOS-Atlantisの
+[m.6xx.1 機能状態表](https://github.com/saitoomituru/SphereOS-Atlantis/blob/dev/m6xx.1-reincarnation-sdk/docs/status/m6xx-capability-matrix.ja.md)
+を正本とします。このページはQ Atlantisの読者向け短縮表示であり、実装、結合、検証、梱包、配布、支援を
+一語の「完成度」へ丸めません。
 
 `RESOURCE-WAIT`は却下でも凍結でもありません。Note、review、test、既存bug fix、branch実装を持ち込める状態です。
 完成していない機能は、火力を持つ第三者が乗れる公開クエストとして残します。
