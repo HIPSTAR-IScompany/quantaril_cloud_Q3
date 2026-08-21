@@ -186,6 +186,7 @@ const sidebars: SidebarsConfig = {
         'operations/migration/index',
         'operations/migration/manifest-transfer-notes',
         'operations/content-pipeline/index',
+        'operations/japanese-technical-writing',
         'operations/cross-shelf-publication-register',
         'operations/funding-and-lineage-integration',
         'operations/sakura-matchbox-deployment',
