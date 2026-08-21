@@ -10,8 +10,9 @@ import styles from './index.module.css';
 const capabilityRows = [
   ['Sphere-DOS 開発シェル', '利用可能', 'ready'],
   ['複数AI作業面', '利用可能', 'ready'],
-  ['Codex PLI 導線', '利用可能', 'ready'],
-  ['独立ランナー', '未実装', 'pending'],
+  ['試験用の判断核', '自動試験済み', 'ready'],
+  ['コックピットGUI', 'レンダー試験済み', 'ready'],
+  ['製品版ランナー', '未実装', 'pending'],
 ] as const;
 
 const productPillars = [
@@ -77,6 +78,7 @@ function HomepageHeader() {
                 <div key={name}><span>{name}</span><strong data-state={state}>{value}</strong></div>
               ))}
             </div>
+            <p className={styles.consoleLabel}>試験用部品が動くことと、完成品として配れることは別です。</p>
           </div>
         </aside>
       </div>

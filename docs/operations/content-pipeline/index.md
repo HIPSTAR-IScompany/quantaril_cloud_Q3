@@ -66,8 +66,8 @@ Google Drive、Git repository、原典ノートは、出典確認、変更履歴
 
 - 一文の主語、修飾先、時制、事実強度を追えるようにする。
 - 硬い直訳調や英単語の過剰な混在を避け、一般名称はカタカナまたは自然な日本語へ戻す。
-- <ruby>schema<rp>（</rp><rt>スキーマー</rt><rp>）</rp></ruby>、<ruby>field<rp>（</rp><rt>フィールド</rt><rp>）</rp></ruby>、
-  <ruby>stable<rp>（</rp><rt>ステイブル</rt><rp>）</rp></ruby> ID、API、protocol、code identifier等、互換性と検索性に必要な技術語は原語を保つ。
+- スキーマー（設計する人・作用）、スキーマ（成果物）、`schema/`（実在パス）のように、語源が同じでも役割で書き分ける。
+- API、protocol、コード識別子等、互換性と検索性に必要な技術語は原語を保つ。
 - `ID`、`API`、`IT`等、義務教育・GIGAスクール帯へ定着した略語は令和の日本語舶来語として扱い、読みを強制しない。
 - `World`、`Fold`のように英語表記そのものがQ Atlantisの概念境界を担う語は原語を保つ。
 - 中学校1年／英検5級程度の平易な英単語には、英語であることだけを理由に読みを強制しない。
@@ -77,5 +77,7 @@ Google Drive、Git repository、原典ノートは、出典確認、変更履歴
 
 この定規は科学、信仰、神話、オタク文化を上下に格付けするものではありません。読者が声を楽しみながら、claim、仕様、
 実装状態、出典の境界を見失わないための校正規約です。
+
+詳しい語形と媒体の区別は[日本語テックライトの書き分け](../japanese-technical-writing.md)を参照してください。
 
 Agentと人格の帰属は[Agent・人格・provider帰属規約](../provenance/agent-persona-attribution.md)に従います。
